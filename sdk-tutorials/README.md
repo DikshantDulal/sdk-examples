@@ -91,12 +91,12 @@ Shows how to run variational quantum optimization using the NFT (Nakanishi-Fujii
 
 ---
 
-### [Max-Cut LR-QAOA pipeline](optimization/haiqu_solve_qubo.ipynb)
+### [`haiqu.solve_qubo()`](optimization/haiqu_solve_qubo.ipynb)
 
-Walks through the modern optimization path on a 20-node Max-Cut instance: `OptimizationProblem` from `qiskit-addon-opt-mapper`, then `haiqu.build_lr_qaoa_circuit`, `haiqu.run`, and `haiqu.postprocess`, with raw vs post-process costs via `evaluate_problem_cost`. Includes a short legacy note on deprecated `QUBO` / `haiqu.solve_qubo()`.
+Shows the `haiqu.solve_qubo()` API for end-to-end QUBO solving. Automatically handles LR-QAOA circuit construction, CVaR analysis, and classical post-processing. For a 20-variable Max-Cut problem, the raw quantum results are suboptimal -- built-in post-processing recovers the optimal solution at no extra quantum cost.
 
 ---
 
 ### [`haiqu.postprocess()`](optimization/haiqu_postprocess.ipynb)
 
-Uses frozen 120-qubit counts to compare raw sampling vs `haiqu.postprocess()`. Loads the problem from CPLEX LP into `OptimizationProblem` (Docplex + `from_docplex_mp`) and scores bitstrings with `evaluate_problem_cost`. Pairs with the Max-Cut notebook above.
+Shows how to use `haiqu.postprocess()` to improve optimization results through classical bit-flip search. For a 120-qubit QUBO problem, the quantum results alone return a suboptimal solution. Post-processing finds the optimal solution without any additional circuit runs.
