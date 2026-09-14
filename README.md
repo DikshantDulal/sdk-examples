@@ -61,8 +61,9 @@ Go through [`sdk-tutorials/run/haiqu_run.ipynb`](sdk-tutorials/run/haiqu_run.ipy
 | `haiqu.state_compression()` with `fine_tuning` | Compression | [haiqu_stateCompression_fineTuning.ipynb](sdk-tutorials/stateCompression/haiqu_stateCompression_fineTuning.ipynb) | Further improve compressed circuit quality with optional post-compression fine-tuning. |
 | `haiqu.observable_backpropagation()` | Compression | [haiqu_observableBackpropagation.ipynb](sdk-tutorials/observableBackpropagation/haiqu_observableBackpropagation.ipynb) | Reduce circuit depth by absorbing layers into the measurement observable via Pauli backpropagation. Cuts 2-qubit gates by ~3x on a 193-qubit circuit. |
 | `haiqu.variational_optimization()` | Variational Optimization, QML | [haiqu_variational_optimization.ipynb](sdk-tutorials/qml/haiqu_variational_optimization.ipynb) | Variational quantum optimization with the NFT gradient-free optimizer. Supports initial parameters, mitigation, and circuit packing. |
-| `haiqu.solve_qubo()` | Variational Optimization, QUBO | [haiqu_solve_qubo.ipynb](sdk-tutorials/optimization/haiqu_solve_qubo.ipynb) | End-to-end QUBO solving with built-in LR-QAOA circuits and classical post-processing. |
-| `haiqu.postprocess()` | Variational Optimization, QUBO | [haiqu_postprocess.ipynb](sdk-tutorials/optimization/haiqu_postprocess.ipynb) | Classical bit-flip post-processing to improve QUBO solutions without additional circuit runs. |
+| `build_lr_qaoa_circuit` → `run` → `postprocess` | Variational Optimization | [haiqu_solve_qubo.ipynb](sdk-tutorials/optimization/haiqu_solve_qubo.ipynb) | Max-Cut on a 20-node reference graph using `OptimizationProblem` and the modular LR-QAOA pipeline (replaces deprecated `haiqu.solve_qubo`). |
+| `haiqu.postprocess()` | Variational Optimization | [haiqu_postprocess.ipynb](sdk-tutorials/optimization/haiqu_postprocess.ipynb) | Post-processing at 120 qubits with LP intake as `OptimizationProblem` and pre-baked MPS counts. |
+| Beam-angle QUBO (tutorial) | Variational Optimization | [beam_angle_lr_qaoa_tutorial.ipynb](sdk-tutorials/optimization/beam_angle_lr_qaoa_tutorial.ipynb) | Synthetic radiotherapy-style beam selection: brute-force check, LR-QAOA run, expected cost and CVaR. |
 
 ## Application Notebooks
 

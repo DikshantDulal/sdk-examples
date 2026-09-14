@@ -1,10 +1,11 @@
 # Optimization tutorials
 
-**Learning path**
+Learning path for combinatorial optimization with Haiqu SDK:
 
-1. [haiqu_solve_qubo.ipynb](haiqu_solve_qubo.ipynb) — 20-qubit Max-Cut: `OptimizationProblem` → `build_lr_qaoa_circuit` → `run` → `postprocess`, with raw vs post-process metrics.
-2. [haiqu_postprocess.ipynb](haiqu_postprocess.ipynb) — 120-qubit instance with frozen counts; LP → `OptimizationProblem` intake and `evaluate_problem_cost`.
+1. **[`haiqu_solve_qubo.ipynb`](haiqu_solve_qubo.ipynb)** — Max-Cut on a 20-node reference graph. Build an `OptimizationProblem` with **qiskit-addon-opt-mapper**, then `build_lr_qaoa_circuit` → `run` → `postprocess`.
+2. **[`haiqu_postprocess.ipynb`](haiqu_postprocess.ipynb)** — Same post-processing API on **120-qubit** pre-baked counts and an LP instance (`graph_optimization_120q/`).
+3. **[`beam_angle_lr_qaoa_tutorial.ipynb`](beam_angle_lr_qaoa_tutorial.ipynb)** — Synthetic beam-angle / radiotherapy-style cardinality QUBO (small instance, brute-force check, distribution metrics).
 
-**Migration:** Use `qiskit_addon_opt_mapper.problems.OptimizationProblem` (and `to_unconstrained_problem` when needed). The Haiqu `QUBO` class and `haiqu.solve_qubo()` remain as deprecated shortcuts only.
+**Migration:** `haiqu.solve_qubo()` and `haiqu.sdk.optimization.QUBO` are deprecated. Prefer `qiskit_addon_opt_mapper.problems.OptimizationProblem` and the explicit circuit → run → postprocess pipeline. See [Haiqu problem formulations](https://docs.haiqu.ai/optimization/problem.html).
 
-**Data in this folder:** `maxcut_graph_reference.json`, `graph_optimization_120q/seq_6434_c.lp`, `graph_optimization_120q/mps_counts_trained.json`.
+Data files in this folder (`maxcut_graph_reference.json`, `graph_optimization_120q/`) are unchanged from earlier tutorials.
