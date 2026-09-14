@@ -63,7 +63,6 @@ Go through [`sdk-tutorials/run/haiqu_run.ipynb`](sdk-tutorials/run/haiqu_run.ipy
 | `haiqu.variational_optimization()` | Variational Optimization, QML | [haiqu_variational_optimization.ipynb](sdk-tutorials/qml/haiqu_variational_optimization.ipynb) | Variational quantum optimization with the NFT gradient-free optimizer. Supports initial parameters, mitigation, and circuit packing. |
 | `build_lr_qaoa_circuit` → `run` → `postprocess` | Variational Optimization | [haiqu_solve_qubo.ipynb](sdk-tutorials/optimization/haiqu_solve_qubo.ipynb) | Max-Cut on a 20-node reference graph using `OptimizationProblem` and the modular LR-QAOA pipeline (replaces deprecated `haiqu.solve_qubo`). |
 | `haiqu.postprocess()` | Variational Optimization | [haiqu_postprocess.ipynb](sdk-tutorials/optimization/haiqu_postprocess.ipynb) | Post-processing at 120 qubits with LP intake as `OptimizationProblem` and pre-baked MPS counts. |
-| Beam-angle QUBO (tutorial) | Variational Optimization | [beam_angle_lr_qaoa_tutorial.ipynb](sdk-tutorials/optimization/beam_angle_lr_qaoa_tutorial.ipynb) | Synthetic radiotherapy-style beam selection: brute-force check, LR-QAOA run, expected cost and CVaR. |
 
 ## Application Notebooks
 

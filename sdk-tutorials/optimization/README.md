@@ -4,7 +4,6 @@ Learning path for combinatorial optimization with Haiqu SDK:
 
 1. **[`haiqu_solve_qubo.ipynb`](haiqu_solve_qubo.ipynb)** — Max-Cut on a 20-node reference graph. Build an `OptimizationProblem` with **qiskit-addon-opt-mapper**, then `build_lr_qaoa_circuit` → `run` → `postprocess`.
 2. **[`haiqu_postprocess.ipynb`](haiqu_postprocess.ipynb)** — Same post-processing API on **120-qubit** pre-baked counts and an LP instance (`graph_optimization_120q/`).
-3. **[`beam_angle_lr_qaoa_tutorial.ipynb`](beam_angle_lr_qaoa_tutorial.ipynb)** — Synthetic beam-angle / radiotherapy-style cardinality QUBO (small instance, brute-force check, distribution metrics).
 
 **Migration:** `haiqu.solve_qubo()` and `haiqu.sdk.optimization.QUBO` are deprecated. Prefer `qiskit_addon_opt_mapper.problems.OptimizationProblem` and the explicit circuit → run → postprocess pipeline. See [Haiqu problem formulations](https://docs.haiqu.ai/optimization/problem.html).
 
